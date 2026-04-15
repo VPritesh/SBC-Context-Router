@@ -1,0 +1,15 @@
+/var/log/asterisk/messages
+/var/log/asterisk/full
+/var/log/asterisk/security
+{
+    daily          # New log every day [cite: 108]
+    rotate 30      # Keep 30 days of history [cite: 109]
+    compress       # Save space [cite: 110]
+    delaycompress
+    notifempty
+    create 0640 asterisk asterisk
+    sharedscripts
+    postrotate
+        /usr/sbin/asterisk -rx 'logger reload' > /dev/null 2> /dev/null
+    endscript
+}
