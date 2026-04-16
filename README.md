@@ -38,10 +38,10 @@ This project provides a robust, production-ready configuration for an Asterisk-b
 
 # 🏗️ Technical Architecture
 The SBC acts as the "Brain" between the Primary PBX and the External Voice Platform:
-- 1. Ingress: Primary PBX sends a call with a campaign-specific prefix.
-- 2. Memory Capture: SBC strips the prefix and saves the CallerID -> CampaignID mapping.
-- 3. Handoff: SBC initiates a SIP INVITE to the External Voice Agent.
-- 4. Escalation: When the Voice Agent transfers back, the SBC retrieves the mapping and routes the call to the live human queue
+1. Ingress: Primary PBX sends a call with a campaign-specific prefix.
+2. Memory Capture: SBC strips the prefix and saves the CallerID -> CampaignID mapping.
+3. Handoff: SBC initiates a SIP INVITE to the External Voice Agent.
+4. Escalation: When the Voice Agent transfers back, the SBC retrieves the mapping and routes the call to the live human queue
 
 
 # 🛠️ Deployment Summary
@@ -60,8 +60,8 @@ The SBC acts as the "Brain" between the Primary PBX and the External Voice Platf
 # 🔍 Observability
 Monitor your traffic in real-time with integrated tools:
 - Visual SIP Inspection: sngrep for packet analysis.
-- Live Logic Tracing: tail -f /var/log/asterisk/full to watch routing decisions.
-- CLI Monitoring: asterisk -rvvvvv for detailed channel status.
+- Live Logic Tracing: `````tail -f /var/log/asterisk/full ````` to watch routing decisions.
+- CLI Monitoring: `````asterisk -rvvvvv````` for detailed channel status.
 
 <p align="center">
 <sub>Managed and Architected by <strong>Pritesh Vadhel</strong> • 2026</sub>
